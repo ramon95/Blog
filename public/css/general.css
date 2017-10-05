@@ -1,3 +1,8 @@
 body {
 	padding: 0em 4em;
 }
+
+.img-responsive{
+	max-width: 255px;
+	height: 150px;
+}

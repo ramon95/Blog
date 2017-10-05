@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>@yield('title','default') | Panel de Administracion</title>
-	<link rel="stylesheet" href="{{ asset('css/general.css')}}">
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/general.css')}}">
 	<link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css')}}">
 	<link rel="stylesheet" href="{{ asset('plugins/Trumbowyg/ui/trumbowyg.css')}}">
 
