@@ -40,6 +40,11 @@ Route::group(['prefix' => 'admin'], function(){
 	])->middleware('auth.basic');
 
   Route::resource('articles', 'ArticlesController')->middleware('auth.basic');
+  Route::get('articles/{id}/destroy', [
+		'uses' => 'ArticlesController@destroy',
+		'as'   => 'articles.destroy'
+	])->middleware('auth.basic');
+
 });
 
 Auth::routes();

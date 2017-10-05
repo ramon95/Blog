@@ -31,10 +31,10 @@
           <td>{{ $article->category->name}}</td>
           <td>{{ $article->user->name}}</td>
 					<td>
-						<a href="#" class="btn btn-warning">
+						<a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">
 							<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 						</a>
-						<a href="#" onclick="return confirm('Seguro que desea eliminarlo?')" class="btn btn-danger">
+						<a href="{{ route('articles.destroy', $article->id)}}" onclick="return confirm('Seguro que desea eliminarlo?')" class="btn btn-danger">
 							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
 						</a>
 					</td>

@@ -8,7 +8,7 @@ use App\Tag;
 use App\Article;
 use App\Image;
 use Laracasts\Flash\Flash;
-use App\Http\Request\ArticlesRequest;
+use App\Http\Requests\ArticlesRequest;
 //use Illuminate\Support\Facades\Redirect;
 
 class ArticlesController extends Controller
@@ -93,7 +93,18 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $articles = Article::find($id);
+        $articles->category;
+        $tags = Tag::orderBy('name', 'ASC')->pluck('name', 'id');
+        $categories = Category::orderBy('name', 'DESC')->pluck('name', 'id');
+
+        $my_tags = $articles->tags->pluck('id')->ToArray();
+
+        return view('admin.articles.edit')
+        ->with('article', $articles)
+          ->with('categories', $categories)
+          ->with('tags', $tags)
+          ->with('my_tags', $my_tags);
     }
 
     /**
@@ -105,7 +116,14 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article = Article::find($id);
+        $article->fill($request->all());
+        $article->save();
+
+        $article->tags()->sync($request->tags);
+
+        Flash::warning('Se ha editado el articulo ' . $article->title . ' de forma exitosa!');
+        return redirect()->route('articles.index');
     }
 
     /**
@@ -116,6 +134,10 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        $article->delete();
+
+        Flash::error('Se ha eliminado el articulo ' . $article->title . ' de forma exitosa!');
+        return redirect()->route('articles.index');
     }
 }
