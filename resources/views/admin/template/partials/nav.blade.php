@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Inicio</a>
+      <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span> Inicio</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,7 +18,7 @@
           <li><a href="{{ route('users.index') }}">Usuarios</a></li>
           <li><a href="{{ route('categories.index') }}">Categorias</a></li>
           <li><a href="{{ route('articles.index') }}">Articulos</a></li>
-          <li><a href="#">Imagenes</a></li>
+          <li><a href="{{ route('image.index') }}">Imagenes</a></li>
           <li><a href="{{ route('tags.index') }}">Tags</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
