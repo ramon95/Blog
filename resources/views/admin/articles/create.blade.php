@@ -14,7 +14,7 @@
     </div>
     <div class="form-group">
       {!! Form::label('content', 'Contenido')!!}
-      {!! Form::textarea('content', 'Contenido...', ['class' => 'form-control'])!!}
+      {!! Form::textarea('content', 'Contenido...', ['class' => 'form-control textarea-content'])!!}
     </div>
     <div class="form-group">
       {!! Form::label('tags', 'Tags')!!}
@@ -37,8 +37,11 @@
       max_selected_options: 3,
       no_results_text: "No se encontraron estos tags"
     });
+
     $('.select-category').chosen({
       placeholder_text_single: "Seleccione una opcion...",
     });
+
+    $('.textarea-content').trumbowyg();
   </script>
 @endsection

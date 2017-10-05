@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="{{ asset('css/general.css')}}">
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css')}}">
 	<link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css')}}">
+	<link rel="stylesheet" href="{{ asset('plugins/Trumbowyg/ui/trumbowyg.css')}}">
 
 </head>
 <body class="admin-body">
@@ -26,6 +27,7 @@
 	<script src="{{ asset('plugins/jquery/js/jquery-3.2.1.js')}}"></script>
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.js')}}"></script>
 	<script src="{{ asset('plugins/chosen/chosen.jquery.js')}}"></script>
+	<script src="{{ asset('plugins/Trumbowyg/trumbowyg.js')}}"></script>
 	@yield('js')
 </body>
 </html>
