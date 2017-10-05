@@ -5,6 +5,7 @@
 	<title>@yield('title','default') | Panel de Administracion</title>
 	<link rel="stylesheet" href="{{ asset('css/general.css')}}">
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css')}}">
 
 </head>
 <body class="admin-body">
@@ -20,9 +21,11 @@
 				@include('admin.template.partials.errors')
 				@yield('content')
 			</div>
-		</div>		
+		</div>
 	</section>
 	<script src="{{ asset('plugins/jquery/js/jquery-3.2.1.js')}}"></script>
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.js')}}"></script>
+	<script src="{{ asset('plugins/chosen/chosen.jquery.js')}}"></script>
+	@yield('js')
 </body>
 </html>
