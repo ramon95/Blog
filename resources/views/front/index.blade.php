@@ -14,7 +14,7 @@
               <div class="categorias">
                 <h3>{{ $article->title}}</h3>
                 <hr>
-                <i class="glyphicon glyphicon-folder-open"><a href="#"> {{ $article->category->name }}</a></i>
+                <i class="glyphicon glyphicon-folder-open"><a href="{{ route('front.search.category', $article->category->name) }}"> {{ $article->category->name }}</a></i>
                 <div class="pull-right">
                   <i class="glyphicon glyphicon-time"> {{ $article->created_at->diffForHumans() }}</i>
                 </div>

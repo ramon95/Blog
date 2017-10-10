@@ -19,3 +19,8 @@ h1,h2,h4 {
 .categorias i{
 	font-size: 13px;
 }
+
+.tag{
+	background-color: #f2dede;
+	margin: 2px;
+}
