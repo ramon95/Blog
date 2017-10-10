@@ -24,3 +24,7 @@ h1,h2,h4 {
 	background-color: #f2dede;
 	margin: 2px;
 }
+
+.titulo:hover{
+	text-decoration: none;
+}
