@@ -1,8 +1,21 @@
 body {
 	padding: 0em 4em;
+	background: url("../image/fondo/fondo.jpg");
 }
 
 .img-responsive{
 	max-width: 255px;
 	height: 150px;
+}
+
+.img-front{
+	height: 150px !important;
+}
+
+h1,h2,h4 {
+	color: white;
+}
+
+.categorias i{
+	font-size: 13px;
 }

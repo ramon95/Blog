@@ -24,10 +24,10 @@
 						@else
 							<span class="label label-primary">{{ $user->type }}</span>
 						@endif
-						
+
 					</td>
 					<td>
-						<a href="{{ route('users.edit',$user->id) }}" class="btn btn-warning"> 
+						<a href="{{ route('users.edit',$user->id) }}" class="btn btn-warning">
 							<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
 						</a>
 						<a href="{{ route('users.destroy', $user->id) }}" onclick="return confirm('Seguro que desea eliminarlo?')" class="btn btn-danger">

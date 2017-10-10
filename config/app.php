@@ -173,17 +173,16 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
         /*
         * Providers Personales
         */
-
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
     ],
 
     /*
@@ -234,7 +233,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         /*
-        * Aliases Personales 
+        * Aliases Personales
         */
 
         'Form' => Collective\Html\FormFacade::class,

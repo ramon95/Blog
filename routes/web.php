@@ -10,40 +10,42 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Rutas del frontend
+Route::get('/', [
+  'uses'  =>  'FrontController@index',
+  'as'    =>  'front.index'
+]);
 
-Route::get('/', ['as' =>'admin.index' ,function () {
-    return view('welcome');
-}]);
-
-Route::group(['prefix' => 'admin'], function(){
+// Rutas del panel de administracion
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
 
 	Route::get('/', ['as' =>'admin.index' ,function () {
-    return view('welcome');
+    return view('admin.index');
 	}]);
 
-	Route::resource('users','UsersController')->middleware('auth.basic');
+	Route::resource('users','UsersController');
 	Route::get('users/{id}/destroy', [
 		'uses' => 'UsersController@destroy',
 		'as'   => 'users.destroy'
-	])->middleware('auth.basic');
+	]);
 
-	Route::resource('categories','CategoriesController')->middleware('auth.basic');
+	Route::resource('categories','CategoriesController');
 	Route::get('categories/{id}/destroy', [
 		'uses' => 'CategoriesController@destroy',
 		'as'   => 'categories.destroy'
-	])->middleware('auth.basic');
+	]);
 
-	Route::resource('tags','TagsController')->middleware('auth.basic');
+	Route::resource('tags','TagsController');
 	Route::get('tags/{id}/destroy', [
 		'uses' => 'TagsController@destroy',
 		'as'   => 'tags.destroy'
-	])->middleware('auth.basic');
+	]);
 
-  Route::resource('articles', 'ArticlesController')->middleware('auth.basic');
+  Route::resource('articles', 'ArticlesController');
   Route::get('articles/{id}/destroy', [
 		'uses' => 'ArticlesController@destroy',
 		'as'   => 'articles.destroy'
-	])->middleware('auth.basic');
+	]);
 
   Route::get('images',[
     'uses' =>  'ImageController@index',
