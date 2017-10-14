@@ -70,7 +70,7 @@ class ArticlesController extends Controller
         $image->article()->associate($article);
         $image->save();
 
-        Flash::success('Se ha creado el articulo '. $article->title . ' de forma exitosa!!');
+        Flash::success('Se ha creado el articulo '. $article->title . ' de forma exitosa!!')->important();
         return redirect()->route('articles.index');
     }
 
@@ -122,7 +122,7 @@ class ArticlesController extends Controller
 
         $article->tags()->sync($request->tags);
 
-        Flash::warning('Se ha editado el articulo ' . $article->title . ' de forma exitosa!');
+        Flash::warning('Se ha editado el articulo ' . $article->title . ' de forma exitosa!')->important();
         return redirect()->route('articles.index');
     }
 
@@ -137,7 +137,7 @@ class ArticlesController extends Controller
         $article = Article::find($id);
         $article->delete();
 
-        Flash::error('Se ha eliminado el articulo ' . $article->title . ' de forma exitosa!');
+        Flash::error('Se ha eliminado el articulo ' . $article->title . ' de forma exitosa!')->important();
         return redirect()->route('articles.index');
     }
 }

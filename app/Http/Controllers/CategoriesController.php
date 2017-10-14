@@ -41,7 +41,7 @@ class CategoriesController extends Controller
         $category = new Category($request->all());
         $category->save();
 
-        Flash::success('La categoria ' . $category->name . ' ha sido creada con exito!');
+        Flash::success('La categoria ' . $category->name . ' ha sido creada con exito!')->important();
         return redirect()->route('categories.index');
     }
 
@@ -81,7 +81,7 @@ class CategoriesController extends Controller
         $category->fill($request->all());
         $category->save();
 
-        Flash::warning('La categoria ' . $category->name . ' ha sido editada con exito!');
+        Flash::warning('La categoria ' . $category->name . ' ha sido editada con exito!')->important();
         return redirect()->route('categories.index');
     }
 
@@ -96,7 +96,7 @@ class CategoriesController extends Controller
         $category = Category::find($id);
         $category->delete();
 
-        Flash::error('La categoria ' . $category->name . ' ha sido borrada con exito!');
+        Flash::error('La categoria ' . $category->name . ' ha sido borrada con exito!')->important();
         return redirect()->route('categories.index');
     }
 }

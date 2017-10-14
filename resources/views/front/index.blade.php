@@ -8,9 +8,11 @@
         @foreach ($articles as $article)
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              @foreach ($article->image as $image)
-                <img class="img-front" src="{{ asset('image/articles/' . $image->name)}}">
-              @endforeach
+              <a href="{{ route('front.view.article', $article->slug) }}">
+                @foreach ($article->image as $image)
+                  <img class="img-front" src="{{ asset('image/articles/' . $image->name)}}">
+                @endforeach
+              </a>
               <div class="categorias">
                 <h3>{{ $article->title}}</h3>
                 <hr>

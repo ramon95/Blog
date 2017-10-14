@@ -41,7 +41,7 @@ class TagsController extends Controller
         $tag = new Tag($request->all());
         $tag->save();
 
-        Flash::success('El tag ' . $tag->name . ' ha sido creado con exito!');
+        Flash::success('El tag ' . $tag->name . ' ha sido creado con exito!')->important();
         return redirect()->route('tags.index');
     }
 
@@ -81,7 +81,7 @@ class TagsController extends Controller
         $tag->Fill($request->all());
         $tag->save();
 
-        Flash::warning('El tag ' . $tag->name . ' ha sido editado con exito!');
+        Flash::warning('El tag ' . $tag->name . ' ha sido editado con exito!')->important();
         return redirect()->route('tags.index');
     }
 
@@ -96,7 +96,7 @@ class TagsController extends Controller
         $tag = Tag::find($id);
         $tag->delete();
 
-        Flash::error('El tag ' . $tag->name . ' ha sido borrado!');
+        Flash::error('El tag ' . $tag->name . ' ha sido borrado!')->important();
         return redirect()->route('tags.index');
     }
 }

@@ -24,7 +24,7 @@ class UsersController extends Controller
     	$users->password = bcrypt($request->password);
     	$users->save();
 
-      Flash::success("Se ha registrado " . $users->name . " de forma exitosa");
+      Flash::success("Se ha registrado " . $users->name . " de forma exitosa")->important();
     	return redirect()->route('users.index');
     }
 
@@ -39,14 +39,14 @@ class UsersController extends Controller
 				$user->type = $request->type;
         $user->save();
 
-        Flash::warning('El usuario ' . $user->name . ' ha sido editado con exito!');
+        Flash::warning('El usuario ' . $user->name . ' ha sido editado con exito!')->important();
         return redirect()->route('users.index');
     }
 
     public function destroy($id){
         $user = User::find($id);
         $user->delete();
-        Flash::error('El usuario ' . $user->name . ' ha sido borrado de forma exitosa!');
+        Flash::error('El usuario ' . $user->name . ' ha sido borrado de forma exitosa!')->important();
         return redirect()->route('users.index');
     }
 }
